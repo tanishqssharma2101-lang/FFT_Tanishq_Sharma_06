@@ -1,0 +1,146 @@
+<html>
+    <head>
+        <title>
+            Interactive student Result Dashboard
+        </title>
+
+    <style>
+
+body {
+    font-family: Arial;
+    background-color: beige;
+    background: url('/Users/tanishqsharma/Desktop/1706071636DJI_0140 (4)-min.webp');
+    background-size: cover;
+}
+
+form {
+    width: 600px;
+    margin: auto;
+    padding: 30px;
+    border: 1px;
+    box-shadow: 0px 2px 2px 2px black;
+    background-color: white;
+    margin-top: 120px;
+}
+
+h1 {
+    text-align: center;
+    color: darkblue;
+    margin-top: 20px;
+}
+
+label {
+    display: inline-block;
+    width: 150px;
+    margin: 10px;
+}
+
+input {
+    padding: 8px;
+    width: 250px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: darkblue;
+    color: white;
+    border: none;
+    align-items: center;
+}
+
+button:hover {
+    background-color: blue;
+}
+
+#Para {
+    margin-top: 20px;
+    padding: 15px;
+}
+
+</style>
+        </style>
+    </head>
+    <body>
+    <form action="">
+        <h1 style="text-align: center;">Interactive student Result Dashboard</h1>
+        <label>Student Name :</label>
+        <input type="Text" name="n1" id="i1"><br> 
+        <br>
+
+        <!-- name -->
+        <label> Student Reg:</label>
+        <input type="text" name="n2" id="i2"><br> <br>
+        
+        <!-- email-->
+        <label> HTML Marks :</label>
+        <input type="number" name="n3" id="i3"><br> <br>
+       
+        <!-- Mobile number -->
+        <label> CSS Marks :</label>
+        <input type="number" name="n4" id="i4"><br><br>
+       
+        <!--  DOB-->
+        <label> JS Marks:</label>
+        <input type="number" name="n5" id="i5"><br> <br>
+
+        <!-- Submit -->
+
+        <label></label>
+        <button onclick="check()" type="button">Result</button>
+
+        <p id="Para"></p>
+ </form>
+<!-- Javascript -->
+ <script>
+    function check(){
+        let n1 = document.getElementById("i1").value;
+        let n2 = document.getElementById("i2").value;
+        let n3 = Number(document.getElementById("i3").value);
+        let n4 = Number(document.getElementById("i4").value);
+        let n5 = Number(document .getElementById("i5").value);
+        let total = n3 + n4 + n5;
+        let average = total/3;
+        let percentage = (total/300)*100;
+        let grade;
+        if(average >= 80){
+            grade = "A"
+        }
+        else if(average >=60){
+            grade = "B"
+        }
+        else if(average >=40){
+            grade = "C"
+        }else if(average < 40){
+            grade = "D"
+        }
+        else{
+            grade = "Fail"
+        }
+
+        let status;
+        if(average >= 40){
+            status = "Pass";
+        }
+        else{
+            status = "Fail"
+        }
+
+        document.getElementById('Para').innerHTML = 
+        "<h1> Student Details</h1>"+"<br>"
+        +"Student Name:"+n1+"<br>"
+        +"Student Reg:"+n2+"<br>"
+        +"HTML Marks:"+n3+"<br>"
+        +"CSS Marks:"+n4+"<br>"
+        +"Js Marks:"+n5+"<br>"
+        +"Total Marks:"+total+"<br>"
+        +"Average Marks:"+average+"<br>"
+        +"Percentage Marks:"+percentage+"<br>"
+        +"Grade:"+grade+"<br>"
+        +"Status:"+status+"<br>"
+
+    }
+ </script>
+         
+
+    </body>
+</html>
